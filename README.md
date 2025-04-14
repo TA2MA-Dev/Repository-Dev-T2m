@@ -1,8 +1,40 @@
-![Auto Assign](https://github.com/TA2MA-Dev/demo-repository/actions/workflows/auto-assign.yml/badge.svg)
+</head>
+<body>
+  <div class="container">
+    <h1>TATUMA Dev.Chain</h1>
+    <p class="lead">Un ecosistema decentralizzato per applicazioni Web3, automazioni AI e finanza distribuita. Costruito da pionieri, per pionieri.</p><div class="section">
+  <h2>Perché TATUMA?</h2>
+  <ul>
+    <li>Architettura modulare basata su agenti AI intelligenti.</li>
+    <li>Automazioni predittive integrate (Es. Serie A, smart data routing).</li>
+    <li>Tokenizzazione asset reali e gestione flussi DeFi.</li>
+    <li>Onboarding semplificato tramite tools low-code & no-code.</li>
+  </ul>
+</div>
 
-![Proof HTML](https://github.com/TA2MA-Dev/demo-repository/actions/workflows/proof-html.yml/badge.svg)
+<div class="section">
+  <h2>Servizi Core</h2>
+  <ul>
+    <li>Smart Contracts personalizzati</li>
+    <li>Pipeline AI & LLM per processi aziendali</li>
+    <li>Aggregazione dati per viaggi e asset digitali</li>
+    <li>VolontaRealmente: impatto sociale via NFT</li>
+  </ul>
+</div>
 
-# Welcome to your organization's demo respository
-This code repository (or "repo") is designed to demonstrate the best GitHub has to offer with the least amount of noise.
+<div class="section">
+  <h2>Integrazioni</h2>
+  <ul>
+    <li>Blockchain Layer1 & Layer2 compatibili</li>
+    <li>n8n, XGBoost, Whisper, LangChain, Pinecone</li>
+    <li>Telegram Bot, Web App, Automazioni su misura</li>
+  </ul>
+</div>
 
-The repo includes an `index.html` file (so it can render a web page), two GitHub Actions workflows, and a CSS stylesheet dependency.
+<footer>
+  &copy; 2025 TATUMA Dev.Chain. Powered by Tatuma LCC. Made with Vision by Anwar Zbir.
+</footer>
+
+  </div>
+</body>
+</html>
