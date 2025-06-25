@@ -32,7 +32,7 @@
 </div>
 
 <footer>
-  &copy; 2025 TATUMA Dev.Chain. Powered by Tatuma LCC. Made with Vision by Anwar Zbir.
+  &copy; 2025 TATUMA Dev.Chain. Powered by Tatuma LCC. Made with TheWolFøFChain 2025©
 </footer>
 
   </div>
