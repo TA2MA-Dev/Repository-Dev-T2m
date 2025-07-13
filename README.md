@@ -76,7 +76,6 @@
       color: #000000;
     }
   </style>
-</head>
 <body>
 
 <!-- Copertina / Intestazione -->
@@ -176,6 +175,7 @@ Siamo pronti ad aiutarti a integrare <strong>TA2MA&trade;</strong> nei tuoi proc
 
 </body>
 </html>
+</head>
 
 
 
