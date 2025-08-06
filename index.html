@@ -3,56 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TATUMA Dev.Chain</title>
+    <title>Volontà Reale - Un'Iniziativa per Mozzate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: Ho progettato l'applicazione come un'unica narrazione a scorrimento verticale, guidando l'utente attraverso un percorso logico. Si inizia con il "perché" (le problematiche), si passa al "cosa" (la soluzione), si esplora il "come" (le missioni interattive e la gamification), si analizzano gli "strumenti" (la tecnologia) e si conclude con l' "impatto" (benefici e visione). Questa struttura tematica, invece di replicare quella dei documenti, facilita la comprensione e l'engagement, permettendo agli utenti di approfondire le aree di maggior interesse, come la sezione interattiva delle missioni, che è il fulcro dell'esperienza. -->
+    <!-- Visualization & Content Choices: Ho tradotto i concetti chiave in elementi visivi e interattivi. Le 4 aree problematiche sono presentate in una griglia chiara. Le missioni sono visualizzate come card filtrabili, con un grafico a ciambella Chart.js che si aggiorna dinamicamente per dare un colpo d'occhio sulla distribuzione delle attività. La gamification è spiegata con un diagramma a passi e un grafico a barre Chart.js che quantifica le ricompense. La tecnologia è rappresentata da icone semplici (Unicode/HTML) per non appesantire. Questa scelta mira a massimizzare la chiarezza e l'interazione senza sovraccaricare l'utente di informazioni. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
-        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
-        header, section, footer { margin-bottom: 30px; }
-        h1, h2 { color: #333; }
-        h1 { font-size: 2.5em; }
-        h2 { font-size: 1.8em; margin-bottom: 10px;}
-        p.lead { font-size: 1.2em; color: #555; }
-        ul { list-style-type: disc; margin-left: 20px; }
-        li { margin-bottom: 8px; }
-        footer { text-align: center; font-size: 0.9em; color: #777; border-top: 1px solid #eee; padding-top: 20px;}
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #14b8a6, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gemini-button {
+            background: linear-gradient(to right, #14b8a6, #0ea5e9);
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #14b8a6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
-<body>
-    <header>
-        <h1>TATUMA Dev.Chain</h1>
-        <p class="lead">Un ecosistema decentralizzato per applicazioni Web3, automazioni AI e finanza distribuita. Costruito da pionieri, per pionieri.</p>
-    </header>
+<body class="bg-stone-50 text-stone-800">
 
-    <section id="perche-tatuma">
-        <h2>Perché TATUMA?</h2>
-        <ul>
-            <li>Architettura modulare basata su agenti AI intelligenti.</li>
-            <li>Automazioni predittive integrate (Es. Serie A, smart data routing).</li>
-            <li>Tokenizzazione asset reali e gestione flussi DeFi.</li>
-            <li>Onboarding semplificato tramite tools low-code & no-code.</li>
-        </ul>
-    </section>
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-    <section id="servizi-core">
-        <h2>Servizi Core</h2>
-        <ul>
-            <li>Smart Contracts personalizzati</li>
-            <li>Pipeline AI & LLM per processi aziendali</li>
-            <li>Aggregazione dati per viaggi e asset digitali</li>
-            <li>VolontaRealmente: impatto sociale via NFT</li>
-        </ul>
-    </section>
+        <header class="text-center py-16 sm:py-24 section-fade-in">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+                <span class="gradient-text">Volontà Reale</span>
+            </h1>
+            <p class="mt-4 text-lg sm:text-xl text-stone-600 max-w-3xl mx-auto">Un'iniziativa innovativa di <span class="font-semibold text-teal-700">Tatuma</span> per il <span class="font-semibold text-sky-700">Comune di Mozzate</span>, che unisce tecnologia e partecipazione civica per costruire una comunità più forte, trasparente e connessa.</p>
+        </header>
 
-    <section id="integrazioni">
-        <h2>Integrazioni</h2>
-        <ul>
-            <li>Blockchain Layer1 & Layer2 compatibili</li>
-            <li>n8n, XGBoost, Whisper, LangChain, Pinecone</li>
-            <li>Telegram Bot, Web App, Automazioni su misura</li>
-        </ul>
-    </section>
+        <section id="problema" class="py-16 sm:py-20 section-fade-in">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight">Le Sfide della Nostra Comunità</h2>
+                <p class="mt-3 text-lg text-stone-600 max-w-2xl mx-auto">Il progetto nasce per rispondere a quattro esigenze concrete, trasformando le difficoltà in opportunità di crescita condivisa.</p>
+            </div>
+            <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-teal-100 text-teal-700 text-2xl">✓</div>
+                    <h3 class="mt-5 text-xl font-semibold">Deficit di Trasparenza</h3>
+                    <p class="mt-2 text-stone-600">Mancanza di visibilità sui processi decisionali e sull'uso delle risorse pubbliche.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-sky-100 text-sky-700 text-2xl">✗</div>
+                    <h3 class="mt-5 text-xl font-semibold">Inefficienza Burocratica</h3>
+                    <p class="mt-2 text-stone-600">Procedure amministrative lente, complesse e poco accessibili per i cittadini.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-amber-100 text-amber-700 text-2xl">👥</div>
+                    <h3 class="mt-5 text-xl font-semibold">Scarso Coinvolgimento</h3>
+                    <p class="mt-2 text-stone-600">Bassa partecipazione dei cittadini alla vita comunitaria e alle attività di volontariato.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-rose-100 text-rose-700 text-2xl">💰</div>
+                    <h3 class="mt-5 text-xl font-semibold">Difficoltà di Finanziamento</h3>
+                    <p class="mt-2 text-stone-600">Scarsità di fondi per progetti di valore sociale, culturale e ambientale.</p>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        &copy; 2025 TATUMA Dev.Chain. Powered by Tatuma LCC. Made with Vision by Anwar Zbir.
+        <section id="soluzione" class="py-16 sm:py-20 section-fade-in">
+             <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight">La Nostra Soluzione Integrata</h2>
+                <p class="mt-3 text-lg text-stone-600 max-w-3xl mx-auto">Abbiamo unito una piattaforma tecnologica all'avanguardia con un programma di volontariato attivo per creare un ecosistema di valore per tutti.</p>
+            </div>
+            <div class="mt-12 grid md:grid-cols-5 gap-8 items-center">
+                <div class="md:col-span-2 p-8 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-sky-700">Piattaforma Tatuma</h3>
+                    <p class="mt-2 text-stone-600">Un ecosistema digitale basato su **Blockchain** per garantire trasparenza e tracciabilità. Integra **Intelligenza Artificiale** per semplificare l'interazione e l'accesso alle informazioni.</p>
+                </div>
+                <div class="text-5xl text-center text-stone-300 font-bold">+</div>
+                <div class="md:col-span-2 p-8 bg-white rounded-xl shadow-lg">
+                     <h3 class="text-2xl font-bold text-teal-700">Iniziativa Volontà Reale</h3>
+                    <p class="mt-2 text-stone-600">Un programma di **volontariato** che incentiva i cittadini a partecipare a missioni concrete per il bene comune, migliorando attivamente il territorio e il tessuto sociale.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="missioni" class="py-16 sm:py-20 section-fade-in">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight">Esplora le Missioni</h2>
+                <p class="mt-3 text-lg text-stone-600 max-w-2xl mx-auto">Diventa protagonista del cambiamento. Scegli una categoria e scopri come puoi contribuire attivamente alla crescita di Mozzate.</p>
+            </div>
+            <div class="lg:grid lg:grid-cols-3 lg:gap-8 items-start">
+                <div class="lg:col-span-2">
+                    <div class="flex flex-wrap gap-2 justify-center my-8">
+                        <button class="mission-filter-btn active bg-teal-600 text-white py-2 px-4 rounded-full text-sm font-semibold" data-filter="all">Tutte</button>
+                        <button class="mission-filter-btn bg-white hover:bg-teal-50 py-2 px-4 rounded-full text-sm font-semibold" data-filter="Ambiente">Ambiente</button>
+                        <button class="mission-filter-btn bg-white hover:bg-teal-50 py-2 px-4 rounded-full text-sm font-semibold" data-filter="Abbellimento">Abbellimento Urbano</button>
+                        <button class="mission-filter-btn bg-white hover:bg-teal-50 py-2 px-4 rounded-full text-sm font-semibold" data-filter="Sociale">Supporto Sociale</button>
+                        <button class="mission-filter-btn bg-white hover:bg-teal-50 py-2 px-4 rounded-full text-sm font-semibold" data-filter="Cultura">Cultura</button>
+                        <button class="mission-filter-btn bg-white hover:bg-teal-50 py-2 px-4 rounded-full text-sm font-semibold" data-filter="Inclusione">Inclusione</button>
+                    </div>
+                    <div id="mission-grid" class="grid sm:grid-cols-2 gap-6">
+                    </div>
+                </div>
+                <div class="lg:col-span-1 mt-12 lg:mt-0">
+                     <div class="p-6 bg-white rounded-xl shadow-lg sticky top-8">
+                         <h3 class="text-xl font-bold text-center">Distribuzione Missioni</h3>
+                         <p class="text-center text-sm text-stone-500 mb-4">Panoramica delle aree di intervento.</p>
+                        <div class="chart-container">
+                            <canvas id="missionsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gemini-mission" class="py-16 sm:py-20 section-fade-in">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight">
+                    <span class="gradient-text">Proponi una Nuova Missione</span>
+                </h2>
+                <p class="mt-3 text-lg text-stone-600 max-w-2xl mx-auto">Hai un'idea per migliorare Mozzate? Descrivila qui sotto e lascia che la nostra IA la trasformi in una proposta di missione completa.</p>
+            </div>
+            <div class="mt-12 max-w-xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <label for="mission-idea" class="block text-sm font-medium text-stone-700">La tua idea in poche parole:</label>
+                    <div class="mt-1">
+                        <input type="text" name="mission-idea" id="mission-idea" class="block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-3" placeholder="Es: pulire le sponde del torrente Bozzente">
+                    </div>
+                    <button id="generate-mission-btn" class="mt-4 w-full gemini-button text-white font-bold py-3 px-4 rounded-md hover:opacity-90 transition-opacity flex items-center justify-center">
+                        <span>✨ Genera Missione</span>
+                    </button>
+                    <div id="gemini-result-loader" class="hidden mt-4">
+                        <div class="loader"></div>
+                        <p class="text-center text-stone-500">L'IA sta elaborando la tua proposta...</p>
+                    </div>
+                    <div id="gemini-result" class="mt-6"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gamification" class="py-16 sm:py-20 section-fade-in">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight">Partecipa, Guadagna, Cresci</h2>
+                <p class="mt-3 text-lg text-stone-600 max-w-2xl mx-auto">Abbiamo creato un sistema di ricompense per rendere il volontariato ancora più coinvolgente e gratificante. Ogni tuo contributo ha un valore riconosciuto.</p>
+            </div>
+            <div class="mt-12 lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div>
+                    <h3 class="text-xl font-bold">Il Ciclo Virtuoso del Volontario</h3>
+                    <ol class="mt-4 space-y-4">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-teal-100 text-teal-700 font-bold">1</span>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Completa le Missioni</h4>
+                                <p class="text-stone-600">Scegli le attività che preferisci e contribuisci attivamente.</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-sky-100 text-sky-700 font-bold">2</span>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Guadagna Punti VR</h4>
+                                <p class="text-stone-600">Accumula Punti Volontà Reale per ogni tua azione.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-amber-100 text-amber-700 font-bold">3</span>
+                            <div class="ml-4">
+                                <h4 class="font-semibold">Sblocca Ricompense NFT</h4>
+                                <p class="text-stone-600">Ottieni badge digitali unici (NFT) che certificano il tuo impegno sulla Blockchain.</p>
+                            </div>
+                        </li>
+                    </ol>
+                     <div class="mt-8 grid grid-cols-3 gap-4">
+                         <div class="p-3 bg-white rounded-lg shadow text-center">
+                            <div class="text-3xl">🥉</div>
+                            <p class="text-xs font-semibold mt-1">Volontario Bronzo</p>
+                            <span class="text-xxs text-stone-500">Comune</span>
+                         </div>
+                         <div class="p-3 bg-white rounded-lg shadow text-center">
+                            <div class="text-3xl">🌍</div>
+                            <p class="text-xs font-semibold mt-1">Eco Warrior</p>
+                            <span class="text-xxs text-stone-500">Raro</span>
+                         </div>
+                          <div class="p-3 bg-white rounded-lg shadow text-center">
+                            <div class="text-3xl">🏆</div>
+                            <p class="text-xs font-semibold mt-1">Volontario Oro</p>
+                            <span class="text-xxs text-stone-500">Leggendario</span>
+                         </div>
+                     </div>
+                </div>
+                 <div class="mt-12 lg:mt-0 p-6 bg-white rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center">Come accumulare Punti VR</h3>
+                    <p class="text-center text-sm text-stone-500 mb-4">Esempi di ricompense.</p>
+                    <div class="chart-container h-80">
+                        <canvas id="pointsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="tecnologia" class="py-16 sm:py-20 section-fade-in">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight">La Tecnologia al Servizio della Comunità</h2>
+                <p class="mt-3 text-lg text-stone-600 max-w-2xl mx-auto">Utilizziamo strumenti all'avanguardia per garantire trasparenza, efficienza e un'esperienza utente moderna e sicura.</p>
+            </div>
+            <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+                <div class="p-4 bg-white rounded-xl shadow-md">
+                    <div class="text-4xl">🔗</div>
+                    <h3 class="mt-2 font-semibold">Blockchain</h3>
+                    <p class="text-sm text-stone-500">Per trasparenza e certificazione (NFT).</p>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-md">
+                    <div class="text-4xl">🤖</div>
+                    <h3 class="mt-2 font-semibold">Intelligenza Artificiale</h3>
+                    <p class="text-sm text-stone-500">Per ottimizzare e semplificare le interazioni.</p>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-md">
+                    <div class="text-4xl">📱</div>
+                    <h3 class="mt-2 font-semibold">React</h3>
+                    <p class="text-sm text-stone-500">Per un'interfaccia web moderna e veloce.</p>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-md">
+                     <div class="text-4xl">📦</div>
+                    <h3 class="mt-2 font-semibold">IPFS</h3>
+                    <p class="text-sm text-stone-500">Per l'archiviazione decentralizzata dei dati.</p>
+                </div>
+                <div class="p-4 bg-white rounded-xl shadow-md col-span-2 sm:col-span-1 lg:col-span-1">
+                     <div class="text-4xl">⚙️</div>
+                    <h3 class="mt-2 font-semibold">n8n</h3>
+                    <p class="text-sm text-stone-500">Per l'automazione dei processi.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-stone-800 text-white mt-20">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-bold text-lg">Volontà Reale</p>
+            <p class="text-sm text-stone-400 mt-1">Un progetto di Tatuma per il Comune di Mozzate.</p>
+            <p class="text-xs text-stone-500 mt-4">&copy; 2025 Tatuma. Tutti i diritti riservati.</p>
+        </div>
     </footer>
-</body>
-</html>
+
+<script>
+    const missionData = [
+        { id: 1, title: "Parco Splendente", category: "Ambiente", points: 75, time: "2-3 ore", description: "Raccogli rifiuti e detriti dal Parco Comunale per mantenerlo pulito e sicuro." },
+        { id: 2, title: "Sentieri Puliti", category: "Ambiente", points: 90, time: "3-4 ore", description: "Mantieni puliti e accessibili i sentieri naturali e le aree verdi periferiche." },
+        { id: 3, title: "Fioritura Urbana", category: "Abbellimento", points: 80, time: "2-4 ore", description: "Pianta fiori e piccole piante in aiuole pubbliche per migliorare l'estetica urbana." },
+        { id: 4, title: "Murales Comunitario", category: "Abbellimento", points: 200, time: "Più sessioni", description: "Realizza opere d'arte su pareti pubbliche per trasformare spazi anonimi." },
+        { id: 5, title: "Eco-Informatore", category: "Ambiente", points: 100, time: "3-5 ore", description: "Distribuisci materiale informativo sulla raccolta differenziata e buone pratiche ambientali." },
+        { id: 6, title: "Workshop Green", category: "Ambiente", points: 180, time: "4 ore", description: "Organizza laboratori pratici su temi come il compostaggio o il riciclo creativo." },
+        { id: 7, title: "Spesa Solidale", category: "Sociale", points: 120, time: "2-3 ore", description: "Aiuta nella raccolta e distribuzione di generi alimentari per le famiglie bisognose." },
+        { id: 8, title: "Compagnia Anziani", category: "Sociale", points: 100, time: "2 ore", description: "Offri supporto e compagnia agli anziani soli, aiutandoli con piccole commissioni." },
+        { id: 9, title: "Cineforum all'Aperto", category: "Cultura", points: 150, time: "4-5 ore", description: "Collabora all'organizzazione di proiezioni cinematografiche in spazi pubblici." },
+        { id: 10, title: "Storie di Mozzate", category: "Cultura", points: 130, time: "3-4 ore", description: "Raccogli e trascrivi testimonianze orali degli anziani per preservare la memoria storica." },
+        { id: 11, title: "Sport per Tutti", category: "Inclusione", points: 160, time: "3 ore", description: "Organizza tornei sportivi aperti a persone di tutte le età e abilità." },
+        { id: 12, title: "Aiuto Compiti Digitale", category: "Inclusione", points: 110, time: "2 ore/sett", description: "Offri supporto a studenti con difficoltà nell'uso di strumenti digitali per lo studio." }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const missionGrid = document.getElementById('mission-grid');
+        const filterButtons = document.querySelectorAll('.mission-filter-btn');
+        let missionsChart;
+        let pointsChart;
+
+        function renderMissions(filter = 'all') {
+            missionGrid.innerHTML = '';
+            const filteredMissions = filter === 'all' ? missionData : missionData.filter(m => m.category.replace(' ', '') === filter);
+
+            filteredMissions.forEach(mission => {
+                const card = document.createElement('div');
+                card.className = 'mission-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300';
+                card.dataset.category = mission.category.replace(' ', '');
+                card.innerHTML = `
+                    <h3 class="text-xl font-bold text-teal-800">${mission.title}</h3>
+                    <div class="flex items-center gap-4 mt-2 text-sm text-stone-500">
+                        <span><span class="font-semibold text-sky-700">${mission.points}</span> Punti VR</span>
+                        <span>🕒 ${mission.time}</span>
+                    </div>
+                    <p class="mt-3 text-stone-600">${mission.description}</p>
+                    <button class="mt-4 bg-teal-500 text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-teal-600 transition-colors">Partecipa</button>
+                `;
+                missionGrid.appendChild(card);
+            });
+        }
+
+        function updateMissionsChart(filter = 'all') {
+            const ctx = document.getElementById('missionsChart').getContext('2d');
+            const categoryCounts = missionData.reduce((acc, mission) => {
+                acc[mission.category] = (acc[mission.category] || 0) + 1;
+                return acc;
+            }, {});
+
+            const labels = Object.keys(categoryCounts);
+            const data = Object.values(categoryCounts);
+
+            const backgroundColors = [
+                'rgba(20, 184, 166, 0.7)',  // teal-500
+                'rgba(245, 158, 11, 0.7)',  // amber-500
+                'rgba(59, 130, 246, 0.7)',  // blue-500
+                'rgba(236, 72, 153, 0.7)',  // pink-500
+                'rgba(139, 92, 246, 0.7)'   // violet-500
+            ];
+             const borderColors = [
+                'rgba(13, 148, 136, 1)',  // teal-600
+                'rgba(217, 119, 6, 1)',   // amber-600
+                'rgba(37, 99, 235, 1)',   // blue-600
+                'rgba(219, 39, 119, 1)',  // pink-600
+                'rgba(124, 58, 237, 1)'   // violet-600
+            ];
+
+            if (missionsChart) {
+                missionsChart.destroy();
+            }
+
+            missionsChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Numero di Missioni',
+                        data: data,
+                        backgroundColor: backgroundColors,
+                        borderColor: borderColors,
+                        borderWidth: 1.5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 15,
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed;
+                                    }
+                                    return label + ' missioni';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderPointsChart() {
+            const ctx = document.getElementById('pointsChart').getContext('2d');
+            const labels = ['Pulizia Parco', 'Spesa Solidale', 'Murales', 'Workshop'];
+            const data = [75, 120, 200, 180];
+
+            if(pointsChart) {
+                pointsChart.destroy();
+            }
+
+            pointsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Punti VR Guadagnati',
+                        data: data,
+                        backgroundColor: [
+                            'rgba(20, 184, 166, 0.6)',
+                            'rgba(14, 165, 233, 0.6)',
+                            'rgba(245, 158, 11, 0.6)',
+                            'rgba(239, 68, 68, 0.6)'
+                        ],
+                        borderColor: [
+                           'rgba(15, 118, 110, 1)',
+                           'rgba(2, 132, 199, 1)',
+                           'rgba(217, 119, 6, 1)',
+                           'rgba(185, 28, 28, 1)'
+                        ],
+                        borderWidth: 1.5
+                    }]
+                },
+                options: {
+                     indexAxis: 'y',
+                     responsive: true,
+                     maintainAspectRatio: false,
+                     plugins: {
+                        legend: {
+                           display: false
+                        }
+                     },
+                     scales: {
+                        x: {
+                           beginAtZero: true,
+                           grid: {
+                             color: 'rgba(200, 200, 200, 0.2)'
+                           }
+                        },
+                        y: {
+                           grid: {
+                             display: false
+                           }
+                        }
+                     }
+                }
+            });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelector('.mission-filter-btn.active').classList.remove('active', 'bg-teal-600', 'text-white');
+                document.querySelector('.mission-filter-btn.active').classList.add('bg-white', 'hover:bg-teal-50');
+
+                button.classList.add('active', 'bg-teal-600', 'text-white');
+                button.classList.remove('bg-white', 'hover:bg-teal-50');
+
+                const filter = button.dataset.filter;
+                renderMissions(filter.replace(' ', ''));
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Gemini AI Interaction
+        const generateBtn = document.getElementById('generate-mission-btn');
+        const missionIdeaInput = document.getElementById('mission-idea');
+        const geminiResultDiv = document.getElementById('gemini-result');
+        const loader = document.getElementById('gemini-result-loader');
+
+        generateBtn.addEventListener('click', async () => {
+            const idea = missionIdeaInput.value;
+            if (!idea) {
+                geminiResultDiv.innerHTML = `<p class="text-red-500 text-sm">Per favore, inserisci un'idea per la missione.</p>`;
+                return;
+            }
+
+            loader.style.display = 'block';
+            geminiResultDiv.innerHTML = '';
+
+            // Simulating a call to a backend or a generative AI model
+            setTimeout(() => {
+                loader.style.display = 'none';
+
+                // This is a mocked response.
+                // In a real scenario, this would come from a server-side call to a GenAI model.
+                const aiResponse = {
+                    title: "Custodi del Torrente Bozzente",
+                    category: "Ambiente",
+                    points: 150,
+                    time: "4-6 ore",
+                    description: `Una missione dedicata alla pulizia e alla riqualificazione delle sponde del torrente Bozzente. I volontari si occuperanno di rimuovere i rifiuti, potare la vegetazione infestante e segnalare eventuali scarichi anomali, contribuendo a ripristinare la salute dell'ecosistema fluviale.`,
+                    steps: [
+                        "Briefing iniziale e consegna del kit di pulizia (guanti, sacchi).",
+                        "Rimozione dei rifiuti lungo un tratto designato del torrente.",
+                        "Documentazione fotografica del prima e dopo.",
+                        "Corretto smaltimento dei rifiuti raccolti."
+                    ]
+                };
+
+                geminiResultDiv.innerHTML = `
+                    <h4 class="text-lg font-bold text-sky-800">${aiResponse.title}</h4>
+                    <p class="text-sm text-stone-500">Categoria: ${aiResponse.category} | Punti VR: ${aiResponse.points} | Tempo stimato: ${aiResponse.time}</p>
+                    <p class="mt-2 text-stone-700">${aiResponse.description}</p>
+                    <h5 class="font-semibold mt-3">Passi suggeriti:</h5>
+                    <ul class="list-disc list-inside text-stone-600 mt-1 text-sm">
+                        ${aiResponse.steps.map(step => `<li>${step}</li>`).join('')}
+                    </ul>
+                     <button class="mt-4 w-full bg-green-600 text-white font-bold py-2 px-4 rounded-md hover:bg-green-700 transition-opacity">Approva e Pubblica Missione</button>
+                `;
+            }, 2000);
+        });
+
+        // Initial render
+        renderMissions();
+        updateMissionsChart();
+        renderPointsChart();
+    });
+
+</script>
