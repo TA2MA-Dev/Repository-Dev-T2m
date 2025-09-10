@@ -1,4 +1,4 @@
-name: Dependabot Auto-merge
+name: TA2MAi Auto-merge
 
 on:
   pull_request:
@@ -12,7 +12,7 @@ permissions:
 jobs:
   dependabot-automerge:
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
+    if: github.actor == 'TA2MA-bot[bot]'
     steps:
       - name: Dependabot metadata
         id: metadata
