@@ -1,4 +1,5 @@
 
+
 </head>
 <body>
   <div class="container">
@@ -33,22 +34,11 @@
 </div>
 
 <footer>
-  &copy; 2025 TATUMA Dev.Chain. Powered by Tatuma LCC. Made with TheWolFøFChain 2025©
-
-
+  &copy; Powered in collab by #TheWolfOfChain# 2025©
 
 <h1>Benvenuto in TA2MA&trade;</h1>
 <h2>Dev.Chain.Model</h2>
 <p><strong>Automazione, flessibilità e AI open-source</strong></p>
-
-<!-- Contatti -->
-<h2>Contatti</h2>
-<p>
-  <strong>Nome:</strong> Anwar Zbir<br>
-  <strong>Indirizzo:</strong> Via Gorla 4, Mozzate (22076)<br>
-  <strong>Email:</strong> <a href="mailto:ta2ma@gmx.us">ta2ma@gmx.us</a><br>
-  <strong>Telefono:</strong> 3516328005
-</p>
 
 <!-- Chi siamo -->
 <h2>Chi siamo</h2>
@@ -126,14 +116,17 @@ Grazie alla sua versatilità, TA2MA&trade; si adatta a qualsiasi contesto profes
 Siamo pronti ad aiutarti a integrare <strong>TA2MA&trade;</strong> nei tuoi processi aziendali. Contattaci oggi stesso!
 </p>
 <ul>
-  <li><strong>Email:</strong> <a href="mailto:ta2ma@gmx.us">ta2ma@gmx.us</a></li>
-  <li><strong>Telefono:</strong> 329 215 1121</li>
-  <li><strong>Indirizzo:</strong> Via Gorla 4, Mozzate (22076)</li>
+  <li><strong>Email:</strong> dev.chainmodel@ta2ma.it</li> 
+  <li><strong>Telefono:</strong> +393516328005</li>
+  <li><strong>Indirizzo:</strong> Via Castiglioni 23 Mozzate (22076)</li>
 </ul>
-
-</body>
+© 2025 TATUMA Dev.Chain. </body>
 </html>
 </head>
+
+
+
+
 
 
 
