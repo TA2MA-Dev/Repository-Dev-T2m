@@ -10,10 +10,10 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
-    steps:  
-    - name: 'Auto-assign issue'
-      uses: pozil/auto-assign-issue@v1
-      with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          assignees: TheWolfOfChain
-          numOfAssignee: 1
+    steps:
+- name: 'Auto-assign issue'
+  uses: pozil/auto-assign-issue@v1
+  with:
+    repo-token: ${{ secrets.GITHUB_TOKEN }}
+    assignees: 'TheWolfOfChain'
+    numOfAssignee: 1
