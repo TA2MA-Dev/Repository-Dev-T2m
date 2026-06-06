@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+head>
+<body>
+<html>
 <html lang="it">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volontà Reale - Un'Iniziativa per Mozzate</title>
@@ -44,22 +45,6 @@
             background: linear-gradient(to right, #14b8a6, #0ea5e9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        .gemini-button {
-            background: linear-gradient(to right, #14b8a6, #0ea5e9);
-        }
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #14b8a6;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -150,32 +135,7 @@
                 </div>
             </div>
         </section>
-
-        <section id="gemini-mission" class="py-16 sm:py-20 section-fade-in">
-            <div class="text-center">
-                <h2 class="text-3xl font-bold tracking-tight">
-                    <span class="gradient-text">Proponi una Nuova Missione</span>
-                </h2>
-                <p class="mt-3 text-lg text-stone-600 max-w-2xl mx-auto">Hai un'idea per migliorare Mozzate? Descrivila qui sotto e lascia che la nostra IA la trasformi in una proposta di missione completa.</p>
-            </div>
-            <div class="mt-12 max-w-xl mx-auto">
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <label for="mission-idea" class="block text-sm font-medium text-stone-700">La tua idea in poche parole:</label>
-                    <div class="mt-1">
-                        <input type="text" name="mission-idea" id="mission-idea" class="block w-full rounded-md border-stone-300 shadow-sm focus:border-teal-500 focus:ring-teal-500 sm:text-sm p-3" placeholder="Es: pulire le sponde del torrente Bozzente">
-                    </div>
-                    <button id="generate-mission-btn" class="mt-4 w-full gemini-button text-white font-bold py-3 px-4 rounded-md hover:opacity-90 transition-opacity flex items-center justify-center">
-                        <span>✨ Genera Missione</span>
-                    </button>
-                    <div id="gemini-result-loader" class="hidden mt-4">
-                        <div class="loader"></div>
-                        <p class="text-center text-stone-500">L'IA sta elaborando la tua proposta...</p>
-                    </div>
-                    <div id="gemini-result" class="mt-6"></div>
-                </div>
-            </div>
-        </section>
-
+        
         <section id="gamification" class="py-16 sm:py-20 section-fade-in">
             <div class="text-center">
                 <h2 class="text-3xl font-bold tracking-tight">Partecipa, Guadagna, Cresci</h2>
@@ -270,12 +230,12 @@
         </section>
 
     </main>
-
+    
     <footer class="bg-stone-800 text-white mt-20">
         <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
             <p class="font-bold text-lg">Volontà Reale</p>
             <p class="text-sm text-stone-400 mt-1">Un progetto di Tatuma per il Comune di Mozzate.</p>
-            <p class="text-xs text-stone-500 mt-4">&copy; 2025 Tatuma. Tutti i diritti riservati.</p>
+            <p class="text-xs text-stone-500 mt-4">© 2025 Tatuma. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
@@ -286,258 +246,40 @@
         { id: 3, title: "Fioritura Urbana", category: "Abbellimento", points: 80, time: "2-4 ore", description: "Pianta fiori e piccole piante in aiuole pubbliche per migliorare l'estetica urbana." },
         { id: 4, title: "Murales Comunitario", category: "Abbellimento", points: 200, time: "Più sessioni", description: "Realizza opere d'arte su pareti pubbliche per trasformare spazi anonimi." },
         { id: 5, title: "Eco-Informatore", category: "Ambiente", points: 100, time: "3-5 ore", description: "Distribuisci materiale informativo sulla raccolta differenziata e buone pratiche ambientali." },
-        { id: 6, title: "Workshop Green", category: "Ambiente", points: 180, time: "4 ore", description: "Organizza laboratori pratici su temi come il compostaggio o il riciclo creativo." },
-        { id: 7, title: "Spesa Solidale", category: "Sociale", points: 120, time: "2-3 ore", description: "Aiuta nella raccolta e distribuzione di generi alimentari per le famiglie bisognose." },
-        { id: 8, title: "Compagnia Anziani", category: "Sociale", points: 100, time: "2 ore", description: "Offri supporto e compagnia agli anziani soli, aiutandoli con piccole commissioni." },
-        { id: 9, title: "Cineforum all'Aperto", category: "Cultura", points: 150, time: "4-5 ore", description: "Collabora all'organizzazione di proiezioni cinematografiche in spazi pubblici." },
-        { id: 10, title: "Storie di Mozzate", category: "Cultura", points: 130, time: "3-4 ore", description: "Raccogli e trascrivi testimonianze orali degli anziani per preservare la memoria storica." },
-        { id: 11, title: "Sport per Tutti", category: "Inclusione", points: 160, time: "3 ore", description: "Organizza tornei sportivi aperti a persone di tutte le età e abilità." },
-        { id: 12, title: "Aiuto Compiti Digitale", category: "Inclusione", points: 110, time: "2 ore/sett", description: "Offri supporto a studenti con difficoltà nell'uso di strumenti digitali per lo studio." }
+        { id: 6, title: "Workshop Green", category: "Ambiente", points: 180, time: "4 ore", description: "Organizza laboratori pratici su temi come il riciclo creativo o il compostaggio." },
+        { id: 7, title: "Spesa Solidale", category: "Sociale", points: 60, time: "1-2 ore", description: "Effettua la spesa o ritira farmaci per anziani o persone con difficoltà motorie." },
+        { id: 8, title: "Compagnia Digitale", category: "Sociale", points: 70, time: "1-2 ore", description: "Offri supporto tecnologico e compagnia a distanza ad anziani o persone sole." },
+        { id: 9, title: "Lettore Animato", category: "Cultura", points: 80, time: "2 ore", description: "Leggi storie e anima sessioni di lettura per bambini in biblioteca." },
+        { id: 10, title: "Guida Turistica Locale", category: "Cultura", points: 120, time: "2-3 ore", description: "Accompagna gruppi alla scoperta della storia e delle curiosità di Mozzate." },
+        { id: 11, title: "Tutor Linguistico", category: "Inclusione", points: 70, time: "1-2 ore", description: "Offri supporto linguistico a cittadini stranieri per facilitare la loro integrazione." },
+        { id: 12, title: "Eventi Inclusivi", category: "Inclusione", points: 100, time: "3+ ore", description: "Supporta l'organizzazione di eventi che promuovono la diversità e l'uguaglianza." },
     ];
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const missionGrid = document.getElementById('mission-grid');
-        const filterButtons = document.querySelectorAll('.mission-filter-btn');
-        let missionsChart;
-        let pointsChart;
+    const missionGrid = document.getElementById('mission-grid');
+    const filterButtons = document.querySelectorAll('.mission-filter-btn');
+    let missionsChart;
+    let pointsChart;
 
-        function renderMissions(filter = 'all') {
-            missionGrid.innerHTML = '';
-            const filteredMissions = filter === 'all' ? missionData : missionData.filter(m => m.category.replace(' ', '') === filter);
+    const categoryColors = {
+        'Ambiente': 'rgba(20, 184, 166, 0.7)',
+        'Abbellimento': 'rgba(245, 158, 11, 0.7)',
+        'Sociale': 'rgba(59, 130, 246, 0.7)',
+        'Cultura': 'rgba(139, 92, 246, 0.7)',
+        'Inclusione': 'rgba(236, 72, 153, 0.7)'
+    };
 
-            filteredMissions.forEach(mission => {
-                const card = document.createElement('div');
-                card.className = 'mission-card bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300';
-                card.dataset.category = mission.category.replace(' ', '');
-                card.innerHTML = `
-                    <h3 class="text-xl font-bold text-teal-800">${mission.title}</h3>
-                    <div class="flex items-center gap-4 mt-2 text-sm text-stone-500">
-                        <span><span class="font-semibold text-sky-700">${mission.points}</span> Punti VR</span>
-                        <span>🕒 ${mission.time}</span>
-                    </div>
-                    <p class="mt-3 text-stone-600">${mission.description}</p>
-                    <button class="mt-4 bg-teal-500 text-white py-2 px-4 rounded-md text-sm font-semibold hover:bg-teal-600 transition-colors">Partecipa</button>
-                `;
-                missionGrid.appendChild(card);
-            });
-        }
+    const categoryBorderColors = {
+        'Ambiente': 'rgb(20, 184, 166)',
+        'Abbellimento': 'rgb(245, 158, 11)',
+        'Sociale': 'rgb(59, 130, 246)',
+        'Cultura': 'rgb(139, 92, 246)',
+        'Inclusione': 'rgb(236, 72, 153)'
+    };
+    
+    function createMissionCard(mission) {
+        return `
+            <div class="mission-card bg-white rounded-xl shadow-md overflow-hidden transition-transform transform hover:-translate-y-1" data-category="${mission.category}">
+                <div class="p-6">
+                    <div class="flex justify-between items-sta
 
-        function updateMissionsChart(filter = 'all') {
-            const ctx = document.getElementById('missionsChart').getContext('2d');
-            const categoryCounts = missionData.reduce((acc, mission) => {
-                acc[mission.category] = (acc[mission.category] || 0) + 1;
-                return acc;
-            }, {});
-
-            const labels = Object.keys(categoryCounts);
-            const data = Object.values(categoryCounts);
-
-            const backgroundColors = [
-                'rgba(20, 184, 166, 0.7)',  // teal-500
-                'rgba(245, 158, 11, 0.7)',  // amber-500
-                'rgba(59, 130, 246, 0.7)',  // blue-500
-                'rgba(236, 72, 153, 0.7)',  // pink-500
-                'rgba(139, 92, 246, 0.7)'   // violet-500
-            ];
-             const borderColors = [
-                'rgba(13, 148, 136, 1)',  // teal-600
-                'rgba(217, 119, 6, 1)',   // amber-600
-                'rgba(37, 99, 235, 1)',   // blue-600
-                'rgba(219, 39, 119, 1)',  // pink-600
-                'rgba(124, 58, 237, 1)'   // violet-600
-            ];
-
-            if (missionsChart) {
-                missionsChart.destroy();
-            }
-
-            missionsChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Numero di Missioni',
-                        data: data,
-                        backgroundColor: backgroundColors,
-                        borderColor: borderColors,
-                        borderWidth: 1.5
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                padding: 15,
-                                font: {
-                                    size: 12
-                                }
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    if (context.parsed !== null) {
-                                        label += context.parsed;
-                                    }
-                                    return label + ' missioni';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderPointsChart() {
-            const ctx = document.getElementById('pointsChart').getContext('2d');
-            const labels = ['Pulizia Parco', 'Spesa Solidale', 'Murales', 'Workshop'];
-            const data = [75, 120, 200, 180];
-
-            if(pointsChart) {
-                pointsChart.destroy();
-            }
-
-            pointsChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Punti VR Guadagnati',
-                        data: data,
-                        backgroundColor: [
-                            'rgba(20, 184, 166, 0.6)',
-                            'rgba(14, 165, 233, 0.6)',
-                            'rgba(245, 158, 11, 0.6)',
-                            'rgba(239, 68, 68, 0.6)'
-                        ],
-                        borderColor: [
-                           'rgba(15, 118, 110, 1)',
-                           'rgba(2, 132, 199, 1)',
-                           'rgba(217, 119, 6, 1)',
-                           'rgba(185, 28, 28, 1)'
-                        ],
-                        borderWidth: 1.5
-                    }]
-                },
-                options: {
-                     indexAxis: 'y',
-                     responsive: true,
-                     maintainAspectRatio: false,
-                     plugins: {
-                        legend: {
-                           display: false
-                        }
-                     },
-                     scales: {
-                        x: {
-                           beginAtZero: true,
-                           grid: {
-                             color: 'rgba(200, 200, 200, 0.2)'
-                           }
-                        },
-                        y: {
-                           grid: {
-                             display: false
-                           }
-                        }
-                     }
-                }
-            });
-        }
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelector('.mission-filter-btn.active').classList.remove('active', 'bg-teal-600', 'text-white');
-                document.querySelector('.mission-filter-btn.active').classList.add('bg-white', 'hover:bg-teal-50');
-
-                button.classList.add('active', 'bg-teal-600', 'text-white');
-                button.classList.remove('bg-white', 'hover:bg-teal-50');
-
-                const filter = button.dataset.filter;
-                renderMissions(filter.replace(' ', ''));
-            });
-        });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.section-fade-in').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Gemini AI Interaction
-        const generateBtn = document.getElementById('generate-mission-btn');
-        const missionIdeaInput = document.getElementById('mission-idea');
-        const geminiResultDiv = document.getElementById('gemini-result');
-        const loader = document.getElementById('gemini-result-loader');
-
-        generateBtn.addEventListener('click', async () => {
-            const idea = missionIdeaInput.value;
-            if (!idea) {
-                geminiResultDiv.innerHTML = `<p class="text-red-500 text-sm">Per favore, inserisci un'idea per la missione.</p>`;
-                return;
-            }
-
-            loader.style.display = 'block';
-            geminiResultDiv.innerHTML = '';
-
-            // Simulating a call to a backend or a generative AI model
-            setTimeout(() => {
-                loader.style.display = 'none';
-
-                // This is a mocked response.
-                // In a real scenario, this would come from a server-side call to a GenAI model.
-                const aiResponse = {
-                    title: "Custodi del Torrente Bozzente",
-                    category: "Ambiente",
-                    points: 150,
-                    time: "4-6 ore",
-                    description: `Una missione dedicata alla pulizia e alla riqualificazione delle sponde del torrente Bozzente. I volontari si occuperanno di rimuovere i rifiuti, potare la vegetazione infestante e segnalare eventuali scarichi anomali, contribuendo a ripristinare la salute dell'ecosistema fluviale.`,
-                    steps: [
-                        "Briefing iniziale e consegna del kit di pulizia (guanti, sacchi).",
-                        "Rimozione dei rifiuti lungo un tratto designato del torrente.",
-                        "Documentazione fotografica del prima e dopo.",
-                        "Corretto smaltimento dei rifiuti raccolti."
-                    ]
-                };
-
-                geminiResultDiv.innerHTML = `
-                    <h4 class="text-lg font-bold text-sky-800">${aiResponse.title}</h4>
-                    <p class="text-sm text-stone-500">Categoria: ${aiResponse.category} | Punti VR: ${aiResponse.points} | Tempo stimato: ${aiResponse.time}</p>
-                    <p class="mt-2 text-stone-700">${aiResponse.description}</p>
-                    <h5 class="font-semibold mt-3">Passi suggeriti:</h5>
-                    <ul class="list-disc list-inside text-stone-600 mt-1 text-sm">
-                        ${aiResponse.steps.map(step => `<li>${step}</li>`).join('')}
-                    </ul>
-                     <button class="mt-4 w-full bg-green-600 text-white font-bold py-2 px-4 rounded-md hover:bg-green-700 transition-opacity">Approva e Pubblica Missione</button>
-                `;
-            }, 2000);
-        });
-
-        // Initial render
-        renderMissions();
-        updateMissionsChart();
-        renderPointsChart();
-    });
-
-</script>
-
-<script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
-
-</body>
-</html>
+<
