@@ -1,130 +1,132 @@
+# TA2MA Protocol — Dev.Chain.Model
 
-
-</head>
-<body>
-  <div class="container">
-    <h1>TATUMA Dev.Chain</h1>
-    <p class="lead">Un ecosistema decentralizzato per applicazioni Web3, automazioni AI e finanza distribuita. Costruito da pionieri, per pionieri.</p><div class="section">
-  <h2>Perché TATUMA?</h2>
-  <ul>
-    <li>Architettura modulare basata su agenti AI intelligenti.</li>
-    <li>Automazioni predittive integrate (Es. Serie A, smart data routing).</li>
-    <li>Tokenizzazione asset reali e gestione flussi DeFi.</li>
-    <li>Onboarding semplificato tramite tools low-code & no-code.</li>
-  </ul>
-</div>
-
-<div class="section">
-  <h2>Servizi Core</h2>
-  <ul>
-    <li>Smart Contracts personalizzati</li>
-    <li>Pipeline AI & LLM per processi aziendali</li>
-    <li>Aggregazione dati per viaggi e asset digitali</li>
-    <li>VolontaRealmente: impatto sociale via NFT</li>
-  </ul>
-</div>
-
-<div class="section">
-  <h2>Integrazioni</h2>
-  <ul>
-    <li>Blockchain Layer1 & Layer2 compatibili</li>
-    <li>n8n, XGBoost, Whisper, LangChain, Pinecone</li>
-    <li>Telegram Bot, Web App, Automazioni su misura</li>
-  </ul>
-</div>
-
-<footer>
-  &copy; Powered in collab by #TheWolfOfChain# 2025©
-
-<h1>Benvenuto in TA2MA&trade;</h1>
-<h2>Dev.Chain.Model</h2>
-<p><strong>Automazione, flessibilità e AI open-source</strong></p>
-
-<!-- Chi siamo -->
-<h2>Chi siamo</h2>
-<p>
-Negli ultimi anni, l'automazione dei flussi di lavoro si è evoluta da semplice strumento di supporto a vero e proprio motore strategico per molte organizzazioni.
-</p>
-<p>
-Tra le soluzioni disponibili, <strong>TA2MA&trade;</strong> si distingue per il suo approccio <strong>open-source</strong>, che combina potenza e personalizzazione per ottimizzare processi e migliorare l'efficienza aziendale.
+<p align="center">
+  <img src="https://img.shields.io/badge/TA2MA-Dev.Chain.Model-00f0ff?style=for-the-badge&logo=ethereum&logoColor=white" alt="TA2MA Banner" />
+  <img src="https://img.shields.io/badge/Architecture-AI%20%2B%20Blockchain-0a0f1d?style=for-the-badge" alt="Architecture" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
 </p>
 
-<!-- Caratteristiche -->
-<h2>Cosa rende TA2MA&trade; speciale?</h2>
+---
 
-<h3>Dev.Chain.Model</h3>
-<p>
-Una piattaforma innovativa che offre automazione avanzata, riducendo il bisogno di scrivere codice e semplificando l'integrazione con l'intelligenza artificiale.
+## 🚀 Overview
+
+**TA2MA Protocol** is a next-generation decentralized platform unifying autonomous Artificial Intelligence and Web3 Blockchain infrastructure through the **Dev.Chain.Model** framework. 
+
+It provides autonomous AI agents with verifiable cryptographic identity, decentralized state attestation, and secure enclave execution.
+
+```
++-----------------------------------------------------------------------+
+|                            TA2MA PROTOCOL                             |
++---------------------------------+-------------------------------------+
+|              DEV                |                CHAIN                |
+|      Low-Code & SwarmOS         |       EVM, ENS & Attestation        |
++---------------------------------+-------------------------------------+
+|                               MODEL                                   |
+|               Verifiable AI & Intel SGX Enclaves                      |
++-----------------------------------------------------------------------+
+```
+
+---
+
+## ⚡ Key Pillars (Dev.Chain.Model)
+
+1. **DEV (Low-Code & SwarmOS Agent Engine)**
+   - Modular workflow orchestration for multi-agent systems.
+   - Real-time task scheduling, state logging, and execution monitoring.
+
+2. **CHAIN (Decentralized EVM & Identity)**
+   - ENS (Ethereum Name Service) integration for verifiable agent handles.
+   - Non-repudiation cryptographic attestations and smart contract execution.
+   - Web3 wallet connectivity (MetaMask, WalletConnect v2.0, Coinbase Smart Wallet).
+
+3. **MODEL (Verifiable AI & Secure Enclaves)**
+   - RAG (Retrieval-Augmented Generation) memory pipelines.
+   - Intel SGX Enclave security for confidential AI inference.
+   - W3C DID (Decentralized Identifiers) interoperability.
+
+---
+
+## 🌐 Global Operations & Tech Labs
+
+TA2MA operates advanced R&D command centers and DevOps facilities across:
+- **Delaware, USA** — Corporate HQ & AI Algorithm R&D Laboratory
+- **Milano, Italy** — DevOps Command Center, High-Density Server Infrastructure & Decentralized Architecture Hub
+
+---
+
+## 🛠️ DCM Control Hub Features
+
+- **SwarmOS Task Manager**: Create, dispatch, and track real-time agent tasks with persistent Firestore synchronization.
+- **Network Node Monitor**: Track active RPC nodes, latencies, and consensus status.
+- **Interactive Demo Requester**: Direct communication pipeline for enterprise partners.
+- **Wallet Connection Portal**: EIP-1193 standard wallet integration for cryptographic signing.
+
+---
+
+## 💻 Tech Stack
+
+- **Frontend**: React 18, Vite, TypeScript, Tailwind CSS
+- **Animations**: Motion (`motion/react`)
+- **Database & Auth**: Firebase Firestore & Firebase Auth
+- **Icons**: Lucide React
+- **Styling**: Cyberpunk dark mode with cyan-tinted neon accents & smooth custom marquee sliders
+
+---
+
+## 🏁 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/TheWolfOfChain/TA2MA.git
+   cd TA2MA
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure Environment Variables:**
+   Create a `.env` file based on `.env.example`:
+   ```env
+   VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   ```
+
+4. **Launch Development Server:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:3000` in your browser.
+
+5. **Build for Production:**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📬 Official Community & Contacts
+
+- **Email**: [dev.chainmodel@ta2ma.it](mailto:dev.chainmodel@ta2ma.it)
+- **Twitter / X**: [@TA2MA_Protocol](https://twitter.com/TA2MA_Protocol)
+- **LinkedIn**: [TA2MA Protocol](https://linkedin.com/company/ta2ma)
+- **Discord**: [TA2MA Devs](https://discord.gg/ta2ma)
+- **GitHub**: [TheWolfOfChain/TA2MA](https://github.com/TheWolfOfChain/TA2MA)
+
+---
+
+<p center align="center">
+  <strong>© 2026 TA2MA LLC. All rights reserved.</strong><br/>
+  <em>Delaware, USA & Milano, Italy</em>
 </p>
-
-<h3>Low-code e potenza</h3>
-<p>
-Grazie a un'interfaccia <em>visuale a nodi</em>, è possibile creare flussi complessi con facilità. Questo consente di:
-</p>
-<ul>
-  <li>Automatizzare attività come notifiche, aggiornamenti di database e analisi dei dati.</li>
-  <li>Ottimizzare il tempo e ridurre errori manuali nei processi aziendali.</li>
-</ul>
-
-<h3>Integrazione con l'AI</h3>
-<p>
-TA2MA&trade; supporta modelli avanzati di Intelligenza Artificiale (LLM) attraverso framework come <strong>LangChain</strong>. Questo permette di costruire agenti intelligenti capaci di:
-</p>
-<ul>
-  <li>Interagire con documenti e database.</li>
-  <li>Effettuare analisi avanzate e categorizzazioni.</li>
-  <li>Supportare decision-making automatizzato.</li>
-</ul>
-
-<h3>Flussi multi-agente</h3>
-<p>
-L'architettura di TA2MA&trade; consente di progettare flussi in cui <strong>più agenti collaborano</strong>:
-</p>
-<ul>
-  <li>Un agente può estrarre dati.</li>
-  <li>Un altro può analizzarli.</li>
-  <li>Il tutto avviene in modo automatizzato all'interno dello stesso sistema.</li>
-</ul>
-
-<h3>Flessibilità totale</h3>
-<p>
-Essendo <strong>open-source</strong>, TA2MA&trade; offre:
-</p>
-<ul>
-  <li>Personalizzazione avanzata.</li>
-  <li>Possibilità di ospitare il sistema su server proprietari.</li>
-  <li>Riduzione dei costi rispetto a piattaforme SaaS come Zapier.</li>
-</ul>
-
-<!-- Utilizzo -->
-<h2>Chi utilizza TA2MA&trade;?</h2>
-<p>
-Dai liberi professionisti alle grandi organizzazioni, TA2MA&trade; trova applicazione in vari settori, tra cui:
-</p>
-<ul>
-  <li><strong>Marketing</strong> – Automazione di campagne e gestione clienti.</li>
-  <li><strong>Gestione IT</strong> – Monitoraggio e risoluzione di problemi tecnici.</li>
-  <li><strong>Analisi legale</strong> – Supporto nella gestione di documenti e processi legali.</li>
-</ul>
-<p>
-Grazie alla sua versatilità, TA2MA&trade; si adatta a qualsiasi contesto professionale.
-</p>
-
-<!-- Conclusione e Contatti -->
-<h2>Contattaci per maggiori informazioni</h2>
-<p>
-Siamo pronti ad aiutarti a integrare <strong>TA2MA&trade;</strong> nei tuoi processi aziendali. Contattaci oggi stesso!
-</p>
-<ul>
-  <li><strong>Email:</strong> dev.chainmodel@ta2ma.it</li> 
-  <li><strong>Telefono:</strong> +393516328005</li>
-  <li><strong>Indirizzo:</strong> Via Castiglioni 23 Mozzate (22076)</li>
-</ul>
-© 2025 TATUMA Dev.Chain. </body>
-</html>
-</head>
-
-
 
 
 
