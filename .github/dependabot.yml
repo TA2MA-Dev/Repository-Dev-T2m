@@ -1,0 +1,25 @@
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Allow both direct and indirect updates
+    allow:
+      - dependency-type: "all"
+    # Automatically rebase PRs when conflicts occur
+    rebase-strategy: "auto"
+    # Group minor and patch updates together
+    groups:
+      minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    # Set commit message preferences
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
