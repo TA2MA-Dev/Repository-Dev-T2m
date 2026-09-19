@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": " Dev.Chain.Model.json",
   "dependencies": {
-    "@primer/css": "17.0.1"
+    "@primer/css": "22.3.1"
   },
   "license": "MIT"
 }
